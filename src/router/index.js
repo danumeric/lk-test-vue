@@ -15,7 +15,6 @@ const routes = [
     component: PersonalAccountView
   }
 ]
-//(process.env.BASE_URL)
 const router = createRouter({
   history: createWebHashHistory(),
   routes

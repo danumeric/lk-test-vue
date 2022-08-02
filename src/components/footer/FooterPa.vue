@@ -42,7 +42,6 @@ export default {
     margin: 0px 0px 0px 0px;
     background: url(@/assets/images/footer-img.svg);
     height: 150px;
-    // display: inline-block;
     width: 100%;
   }
   &__contacts {
@@ -53,7 +52,6 @@ export default {
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
-    // text-align: center;
   }
   &__adress {
     margin: 20px 0px 0px 0px;
