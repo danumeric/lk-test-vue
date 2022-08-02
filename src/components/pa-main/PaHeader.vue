@@ -76,26 +76,24 @@ export default {
 </style>
 <style lang="scss">
 .bm-burger-button {
-  top: 20px;
-  left: calc(100vw - 58px);
-  display: none;
+  top: 20px !important;
+  left: calc(100vw - 58px) !important;
+  display: none !important;
   @media (max-width: 767.98px) {
-    display: block;
+    display: block !important;
   }
 }
 .bm-burger-bars {
-  background-color: #979797;
+  background-color: #979797 !important;
 }
 .bm-menu {
-  background-color: #f1f1f1; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #f1f1f1 !important;
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
 }
 .bm-item-list > * {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  padding: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
 }
 </style>
