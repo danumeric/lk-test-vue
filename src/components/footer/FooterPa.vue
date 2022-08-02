@@ -60,7 +60,7 @@ export default {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.2;
     &:before {
       padding: 0px 10px 0px 0px;
       font-family: FontAwesome;
@@ -97,6 +97,7 @@ export default {
     height: 50px;
     margin: 0px 0px 0px 10%;
     font-size: 14px;
+    line-height: 1.2;
   }
 }
 

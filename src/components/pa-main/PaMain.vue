@@ -1,18 +1,7 @@
 <template>
   <div class="pa-main">
-    <div class="header pa-main__header">
-      <div class="header__logo">
-        <img
-          class="header__img-logo"
-          src="@/assets/images/logo-eco-safety.png"
-          alt="logo-eco-safety"
-        />
-      </div>
-      <span class="header__text"> Ваш логин: {{ getLoginName }} </span>
-      <span @click="paExit" class="header__text header__text_exit">Выход</span>
-    </div>
+    <PaHeader />
     <div v-if="getListDocs.length" class="pa-main__list list-docs">
-      <!-- <div class="pa-main__list list-docs"> -->
       <div class="list-docs__list">
         <template v-for="doc in getListDocs" :key="doc.id_document">
           <DocumentCart :doc="doc" />
@@ -26,24 +15,15 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
-import router from "@/router";
+import { mapGetters } from "vuex";
 import DocumentCart from "@/components/pa-main/DocumentCart";
+import PaHeader from "@/components/pa-main/PaHeader";
 
 export default {
   name: "PaMain",
-  components: { DocumentCart },
+  components: { DocumentCart, PaHeader },
   computed: {
-    ...mapGetters(["getLoginName", "getListDocs"]),
-  },
-  methods: {
-    ...mapMutations(["clearDataUser", "clearDocsUser"]),
-
-    paExit() {
-      this.clearDataUser();
-      this.clearDocsUser();
-      router.push("/");
-    },
+    ...mapGetters(["getListDocs"]),
   },
 };
 </script>
@@ -51,27 +31,14 @@ export default {
 
 <style lang="scss">
 .pa-main {
+  position: relative;
   margin: 15px 15px 0px 15px;
   font-family: "Lato", sans-serif;
-}
-.header {
-  display: flex;
-  &__logo {
-    flex: 1 0;
-  }
-  &__text {
-    margin: 15px 0px 0px 0px;
-    font-size: 14px;
-    color: #444e67;
-    &_exit {
-      margin: 15px 0px 0px 30px;
-      cursor: pointer;
-      &:hover {
-        color: #040405;
-      }
-    }
+  @media (max-width: 767.98px) {
+    margin: 10px 10px 0px 10px;
   }
 }
+
 .list-docs {
   display: flex;
   flex-direction: column;
@@ -81,6 +48,10 @@ export default {
     width: 800px;
     border-radius: 4px;
     border: 5px solid #f1f1f1;
+    @media (max-width: 767.98px) {
+      width: 100%;
+      margin: 20px 0px 0px 0px;
+    }
   }
 }
 </style>
